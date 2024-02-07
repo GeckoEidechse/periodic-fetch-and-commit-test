@@ -7,6 +7,11 @@ jobs:
   fetch:
     runs-on: ubuntu-22.04
     steps:
-    - name: test
+    - name: Download New File
       run: |
-        echo Test
+        if curl -o temp-download/test.txt https://geckoeidechse.github.io/quick-gh-pages-test/test.txt; then
+          echo "File download successful."
+        else
+          echo "File download failed."
+          exit 1
+        fi

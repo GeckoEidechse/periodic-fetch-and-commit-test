@@ -13,7 +13,7 @@ jobs:
     - name: Download New File
       run: |
         mkdir temp-download/
-        if curl -o temp-download/test.txt https://geckoeidechse.github.io/quick-gh-pages-test/test.txt; then
+        if curl -o temp-download/playlists_v2.txt https://r2-pc.s3.amazonaws.com/playlists_v2.txt; then
           echo "File download successful."
         else
           echo "File download failed."
@@ -23,7 +23,7 @@ jobs:
     - name: Check for Differences
       id: check-differences
       run: |
-        if ! diff -q temp-download/test.txt data/test.txt; then
+        if ! diff -q temp-download/playlists_v2.txt data/playlists_v2.txt; then
           echo "Files are different."
           echo "FILE_UPDATED=true" >> $GITHUB_ENV
         else
@@ -34,7 +34,7 @@ jobs:
     - name: Overwrite File
       if: steps.check-differences.outcome == 'success' && env.FILE_UPDATED == 'true'
       run: |
-        mv temp-download/test.txt data/test.txt
+        mv temp-download/playlists_v2.txt data/playlists_v2.txt
 
     - name: Commit and Push Changes
       if: steps.check-differences.outcome == 'success' && env.FILE_UPDATED == 'true'
@@ -42,6 +42,6 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-        git add data/test.txt
+        git add data/playlists_v2.txt
         git commit -m "Update file"
         git push

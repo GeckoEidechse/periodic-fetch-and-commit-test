@@ -16,3 +16,14 @@ jobs:
           echo "File download failed."
           exit 1
         fi
+
+    - name: Check for Differences
+      id: check-differences
+      run: |
+        if ! diff -q temp-download/test.txt data/test.txt; then
+          echo "Files are different."
+          echo "FILE_UPDATED=true" >> $GITHUB_ENV
+        else
+          echo "Files are the same. Skipping commit."
+          echo "FILE_UPDATED=false" >> $GITHUB_ENV
+        fi

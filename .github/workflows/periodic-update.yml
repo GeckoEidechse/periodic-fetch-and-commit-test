@@ -28,3 +28,15 @@ jobs:
           echo "Files are the same. Skipping commit."
           echo "FILE_UPDATED=false" >> $GITHUB_ENV
         fi
+
+    - name: Overwrite File
+      if: steps.check-differences.outcome == 'success' && env.FILE_UPDATED == 'true'
+      run: |
+        mv temp-download/test.txt data/test.txt
+
+    - name: Commit and Push Changes
+      if: steps.check-differences.outcome == 'success' && env.FILE_UPDATED == 'true'
+      run: |  
+        git add data/test.txt
+        git commit -m "Update file"
+        git push

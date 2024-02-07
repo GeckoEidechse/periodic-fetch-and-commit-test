@@ -9,6 +9,7 @@ jobs:
     steps:
     - name: Download New File
       run: |
+        mkdir temp-download/
         if curl -o temp-download/test.txt https://geckoeidechse.github.io/quick-gh-pages-test/test.txt; then
           echo "File download successful."
         else

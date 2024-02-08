@@ -43,5 +43,5 @@ jobs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
         git add data/playlists_v2.txt
-        git commit -m "Update file"
+        git commit --message="Update file"
         git push

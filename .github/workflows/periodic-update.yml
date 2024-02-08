@@ -13,7 +13,7 @@ jobs:
     - name: Download New File
       run: |
         mkdir temp-download/
-        if curl -o temp-download/playlists_v2.txt https://r2-pc.s3.amazonaws.com/playlists_v2.txt; then
+        if curl --output temp-download/playlists_v2.txt https://r2-pc.s3.amazonaws.com/playlists_v2.txt; then
           echo "File download successful."
         else
           echo "File download failed."

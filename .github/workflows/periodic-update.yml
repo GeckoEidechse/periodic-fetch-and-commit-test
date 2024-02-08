@@ -23,7 +23,7 @@ jobs:
     - name: Check for Differences
       id: check-differences
       run: |
-        if ! diff -q temp-download/playlists_v2.txt data/playlists_v2.txt; then
+        if ! diff --brief temp-download/playlists_v2.txt data/playlists_v2.txt; then
           echo "Files are different."
           echo "FILE_UPDATED=true" >> $GITHUB_ENV
         else

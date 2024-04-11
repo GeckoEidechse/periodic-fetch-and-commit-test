@@ -3,7 +3,7 @@ name: Periodic Update
 on:
   workflow_dispatch:
   schedule:
-    - cron: "19 * * * *"
+    - cron: "19 13 * * *"
 
 jobs:
   fetch:

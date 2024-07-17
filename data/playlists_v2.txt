@@ -1,7 +1,7 @@
 playlists
 {
 	version stable
-	versionNum 3324 // Never forget to bump this for every playlist update.
+	versionNum 3325 // Never forget to bump this for every playlist update.
 	Gamemodes
 	{
 		defaults
@@ -167,7 +167,7 @@ playlists
 
 
 				// Event defaults
-				double_xp_enabled 1
+				double_xp_enabled 0
 
 				faq_patchnotes_version 11
 				faq_patchnotes_count 10

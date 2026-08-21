@@ -1,7 +1,7 @@
 playlists
 {
 	version stable
-	versionNum 3325 // Never forget to bump this for every playlist update.
+	versionNum 3326 // Never forget to bump this for every playlist update.
 	Gamemodes
 	{
 		defaults
@@ -2833,10 +2833,10 @@ playlists
 				"PL_fd_desc"	"Verteidige dich gegen Wellen von Truppen der Restflotte"
 				"PL_fd_easy"	"Grenzlandverteidigung: Leicht"
 				"PL_fd_easy_desc"	"Zerschlage den Gegner"
-				"PL_fd_easy_lobby"	"Grenzlandverteidigung: Leicht-Lobby"
+				"PL_fd_easy_lobby"	"Grenzlandverteidigung: Leicht - Lobby"
 				"PL_fd_hard"	"Grenzlandverteidigung: Schwer"
 				"PL_fd_hard_desc"	"Können ist erforderlich"
-				"PL_fd_hard_lobby"	"Grenzlandverteidigung: Schwer-Lobby"
+				"PL_fd_hard_lobby"	"Grenzlandverteidigung: Schwer - Lobby"
 				"PL_fd_insane"	"Grenzlandverteidigung: Wahnsinn"
 				"PL_fd_insane_desc"	"Du wirst nicht überleben"
 				"PL_fd_insane_lobby"	"Grenzlandverteidigung: Wahnsinn – Lobby"
